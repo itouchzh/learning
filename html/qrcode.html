@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRCode</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+</head>
+<body>
+    <div id="qrcode"></div>
+    <script>
+        $(function(){
+            const dom = $('#qrcode')
+            const QR = new QRCode('qrcode',{
+                text:'<button> click </button>',
+                width:128,
+                height:128,
+                colorDark:'#000',
+                colorLight: '#fff',
+                correctLevel: QRCode.CorrectLevel.H
+            })
+            QR.makeCode('https://translate.google.cn/?sl=auto&tl=en&text=%E4%BA%8C%E7%BB%B4%E7%A0%81&op=translate')
+        })
+    </script>
+</body>
+</html>
